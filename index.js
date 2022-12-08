@@ -2,25 +2,21 @@
 1. Fix the bugs in the codes below, to make the console print out different numbers
 from 0 to 100
  */
-
 // const printNum = () => {
 //     for (var i = 0; i <= 100; i++) {
 //         setTimeout(() => console.log(i), 1000)
 //     }
 // }
-
 // printNum()
 
 /* ----------------------- Problem 1 ----------------------- */
-
 const printNum = () => {
   for ( let i = 0; i <= 100; i++) {
-      setTimeout(() => console.log(i), 1000)
+    setTimeout(() => console.log(i), 1000)
   }
 }
 
 printNum()
-
 
 /*
 2. Given the array below:
@@ -31,14 +27,33 @@ format dates day-month-year
 expected result: ['24-12-2014', '23-09-2022', '30-12-2021', '08-02-2021', '15-07-2018', '14-12-2019', '14-12-2022'] . 
 You only need to produce the same array as expected result, no need to consider other 
 possibility.
- */
+ */ 
 
 let myArr = ['12-24-2014', '09-2022-23', '12-30-2021', '08-02-2021', '07-15-2018', '2019-12-14', '2022-14-12']
 const fixDate = (array) => {
-    /* provide your code here */
+  /* provide your code here */
+  return array.map(date => {
+    let day, month, year;
+    let orderDate = date.split("-");
+    for (let value of orderDate) {
+      if ( value.length > 2) {
+        year = value
+      }
+      if (value < 13 & !month) {
+        month = value
+      }
+      if (value <= 31 && value != month) {
+        day = value
+      }
+    }
+    date = [day, month, year]
+    return date.join("-")
+  }) 
 }
+
 let newArr = fixDate(myArr)
 console.log(newArr)
+/* I feel like the given array is not in the order of month-day-year as written */
 
 /*
 3. Counter function

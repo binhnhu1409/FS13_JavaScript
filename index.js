@@ -101,7 +101,16 @@ to array, and so on.
 */
 
 const generateNewFolderName = (existingFolders) => {
-    /*  provide your code here */
+  /*  provide your code here */
+  let find = existingFolders.filter(element => element.includes('New Folder'))
+  if ( find.length == 0) {
+    existingFolders = existingFolders.push('New Folder')
+  }
+  if ( find.length > 0) {
+    let order = find.length 
+    existingFolders = existingFolders.push('New Folder' + ' (' + order.toString() + ')')
+  }
+  return existingFolders
 }
 
 let folder = []

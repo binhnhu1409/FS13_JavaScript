@@ -7,12 +7,45 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
+
 <body>
-    <!-- Question 4 in index.js
-        * write form with input and search button to search and display the found/notfound country
-        * use grid to display all the countries fetched from the given url
-        * no extra library, only vanilla CSS or SASS. Be creative in your own layout
-     -->
-    <script src="index.js"></script>
+  <!-- Question 4 in index.js
+      * write form with input and search button to search and display the found/notfound country
+      * use grid to display all the countries fetched from the given url
+      * no extra library, only vanilla CSS or SASS. Be creative in your own layout
+  -->
+  <main>
+    <div class="container">
+      <table className="countriesTable">
+        <thead className="countriesTable__header">
+          <tr>
+            <th className="countriesTable__items">Flag</th>
+            <th className="countriesTable__items">Name</th>
+            <th className="countriesTable__items">Languages</th>
+            <th className="countriesTable__items">Population</th>
+            <th className="countriesTable__items">Region</th>
+          </tr>
+        </thead>
+        <tbody className="countriesTable__body">
+          <tr className="countriesRow">
+            <td className="countriesRow_items">
+              <img
+                className="countriesRow__img"
+                src="" alt= ""/>
+            </td>
+            <td className="countriesRow_items">
+              {country.name}
+            </td>
+            <td className="countriesRow_items">
+              {country.language}
+            </td>
+            <td className="countriesRow_items">{country.population}</td>
+            <td className="countriesRow_items">{country.region}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+  <script src="index.js"></script>
 </body>
 </html>

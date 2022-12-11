@@ -1,0 +1,19 @@
+{
+  "name": "fs13-javascript",
+  "version": "1.0.0",
+  "description": "* Fork the repo and clone forked repo. Add .gitignore to exclude .git folder or any other unneccessary files.\r * Assignments are described in the index.js\r * No extra library should be installed to help with JavaScript assignment, apart from SASS if you want to write style accordingly.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/binhnhu1409/fs13-JavaScript.git"
+  },
+  "author": "Nhu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/binhnhu1409/fs13-JavaScript/issues"
+  },
+  "homepage": "https://github.com/binhnhu1409/fs13-JavaScript#readme"
+}

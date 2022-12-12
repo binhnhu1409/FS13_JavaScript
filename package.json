@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/binhnhu1409/fs13-JavaScript/issues"
   },
-  "homepage": "https://github.com/binhnhu1409/fs13-JavaScript#readme"
+  "homepage": "https://github.com/binhnhu1409/fs13-JavaScript#readme",
+  "dependencies": {
+    "node-fetch": "^3.3.0"
+  }
 }

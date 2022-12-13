@@ -83,19 +83,22 @@ console.log(timer)
 The data fetched from url should be displayed in index.html.
 */
 
+let countries = []
+
 const getAllCountries = () => {
   /* provide your code here */
   async function getAll() {
     try {
       const response = await fetch('https://restcountries.com/v3.1/all');
       const countries = await response.json();
-      console.log(countries)
+      return countries.sort
     } catch (err) {
       console.error(err);
     }
   }
   getAll()
 }
+
 
 const getSingleCountry = () => {
     /* provide your code here */

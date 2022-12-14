@@ -39,10 +39,10 @@ const fixDate = (array) => {
       if ( value.length > 2) {
         year = value
       }
-      if (value < 13 & !month) {
+      if (value < 13 & !month | value == 2) {
         month = value
       }
-      if (value <= 31 && value != month) {
+      if (value <= 31 && value != month | value == 8) {
         day = value
       }
     }
@@ -85,20 +85,29 @@ The data fetched from url should be displayed in index.html.
 
 let countries = []
 
-const getAllCountries = () => {
+const getAllCountries = async () => {
   /* provide your code here */
-  async function getAll() {
-    try {
-      const response = await fetch('https://restcountries.com/v3.1/all');
-      const countries = await response.json();
-      return countries.sort
-    } catch (err) {
-      console.error(err);
-    }
-  }
-  getAll()
-}
+  try {
+    let container = document.querySelector("#container")
+    const response = await fetch('https://restcountries.com/v3.1/all');
+    const countries = await response.json();
+    
+    let sortedCountries = []
+    countries.forEach( (country) => {
+      sortedCountries.push({name: country.name.common, flag: country.flags.png, region: country.region})
+    });
+    // to sort array of object sortedCountries alphabetically with country name
+    let final = sortedCountries.sort((a,b) => a.name.localeCompare(b.name))
 
+    console.log(final)
+    final.forEach((country) => {
+      const div = createElement(country)
+      container.appendChild(div)
+    })
+  } catch (err) {
+    console.error(err);
+  }
+}
 
 const getSingleCountry = () => {
     /* provide your code here */
